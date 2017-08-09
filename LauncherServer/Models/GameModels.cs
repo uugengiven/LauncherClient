@@ -20,6 +20,7 @@ namespace LauncherServer.Models
         public int id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+        public string salt { get; set; }
         public bool inUse { get; set; }
         public Computer inUseBy { get; set; }
         public virtual List<Game> games { get; set; }
@@ -30,6 +31,7 @@ namespace LauncherServer.Models
     {
         public int id { get; set; }
         public string name { get; set; }
+        public string description { get; set; }
         public string ip { get; set; }
         public string key { get; set; }
         public bool authorized { get; set; }
