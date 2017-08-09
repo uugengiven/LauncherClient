@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Jose;
+using System.Security.Cryptography;
 
 namespace LauncherServer.Controllers
 {
@@ -32,6 +33,7 @@ namespace LauncherServer.Controllers
                     output.username = user.username;
                     output.password = Decrypt(user.password);
                     user.inUse = true;
+                    user.inUseBy = db.Computers.Find(1);
                     db.SaveChanges();
                     return new JsonResult() { Data = output, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
                 }
@@ -46,10 +48,19 @@ namespace LauncherServer.Controllers
 
         public string Setup()
         {
+            //var game = new Game();
+            //game.exe = "dota2.exe";
+            //game.name = "Dota 2";
+            //game.steamId = 570;
+            //game.users = new List<SteamUser>();
+            //db.Games.Add(game);
+            //db.SaveChanges();
+
             //var su = new SteamUser();
-            //su.username = "LFGDeadbydaylight";
-            //su.password = Encrypt("asdf");
+            //su.username = "SomeDota";
+            //su.password = Encrypt("dota2");
             //su.games = new List<Game>();
+            //su.games.Add(game);
             //db.SteamUsers.Add(su);
 
             //var su1 = new SteamUser();
@@ -88,8 +99,17 @@ namespace LauncherServer.Controllers
 
         public string Decrypt(string value)
         {
-            var secretKey = new byte[] { 164, 60, 194, 0, 161, 189, 41, 38, 130, 89, 141, 164, 45, 170, 159, 209, 69, 137, 243, 216, 191, 131, 47, 250, 32, 107, 231, 117, 37, 158, 225, 234 };
+            var secretKeybit = "pDzCAKG9KSaCWY2kLaqf0UWJ89i/gy/6IGvndSWe4eo=";
+            var secretKey = System.Convert.FromBase64String(secretKeybit);
             return Jose.JWT.Decode(value, secretKey, JwsAlgorithm.HS256);
+        }
+
+        public string getSalt(int max_length)
+        {
+            var random = new RNGCryptoServiceProvider();
+            byte[] salt = new byte[max_length];
+            random.GetBytes(salt);
+            return Convert.ToBase64String(salt);
         }
 
     }

@@ -221,6 +221,10 @@
     <Compile Include="Migrations\LauncherDbContext\201705301427520_add_using.Designer.cs">
       <DependentUpon>201705301427520_add_using.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\LauncherDbContext\201708051747257_addComputer.cs" />
+    <Compile Include="Migrations\LauncherDbContext\201708051747257_addComputer.Designer.cs">
+      <DependentUpon>201708051747257_addComputer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LauncherDbContext\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GameModels.cs" />
@@ -315,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\LauncherDbContext\201705301427520_add_using.resx">
       <DependentUpon>201705301427520_add_using.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\LauncherDbContext\201708051747257_addComputer.resx">
+      <DependentUpon>201708051747257_addComputer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -21,9 +21,18 @@ namespace LauncherServer.Models
         public string username { get; set; }
         public string password { get; set; }
         public bool inUse { get; set; }
-        public string inUseBy { get; set; }
+        public Computer inUseBy { get; set; }
         public virtual List<Game> games { get; set; }
 
+    }
+
+    public class Computer
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string ip { get; set; }
+        public string key { get; set; }
+        public bool authorized { get; set; }
     }
 
     public class LauncherDbContext : DbContext
@@ -35,6 +44,7 @@ namespace LauncherServer.Models
 
         public DbSet<SteamUser> SteamUsers { get; set; }
         public DbSet<Game> Games { get; set; }
+        public DbSet<Computer> Computers { get; set; }
     }
 
     public class GameStartViewModel
