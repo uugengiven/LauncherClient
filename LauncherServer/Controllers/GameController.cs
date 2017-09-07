@@ -48,7 +48,7 @@ namespace LauncherServer.Controllers
 
         public string Setup()
         {
-            //var game = new Game();
+            var game = new Game();
             //game.exe = "dota2.exe";
             //game.name = "Dota 2";
             //game.steamId = 570;
@@ -71,12 +71,12 @@ namespace LauncherServer.Controllers
 
 
             //var game = db.Games.Find(3);
-            ////game.name = "Dead by Daylight";
-            ////game.steamId = 381210;
-            ////game.exe = "deadbydaylight.exe";
-            ////game.users = new List<SteamUser>();
-            ////db.Games.Add(game);
-            ////db.SaveChanges();
+            //game.name = "Dead by Daylight";
+            //game.steamId = 381210;
+            //game.exe = "deadbydaylight.exe";
+            //game.users = new List<SteamUser>();
+            //db.Games.Add(game);
+            //db.SaveChanges();
 
             //su.games.Add(game);
             //su1.games.Add(game);

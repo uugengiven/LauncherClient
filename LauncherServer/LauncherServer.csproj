@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -225,6 +226,10 @@
     <Compile Include="Migrations\LauncherDbContext\201708051747257_addComputer.Designer.cs">
       <DependentUpon>201708051747257_addComputer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\LauncherDbContext\201709071714114_addSalt.cs" />
+    <Compile Include="Migrations\LauncherDbContext\201709071714114_addSalt.Designer.cs">
+      <DependentUpon>201709071714114_addSalt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LauncherDbContext\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GameModels.cs" />
@@ -322,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\LauncherDbContext\201708051747257_addComputer.resx">
       <DependentUpon>201708051747257_addComputer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\LauncherDbContext\201709071714114_addSalt.resx">
+      <DependentUpon>201709071714114_addSalt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
